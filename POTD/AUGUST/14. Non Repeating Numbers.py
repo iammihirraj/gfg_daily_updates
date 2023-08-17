@@ -5,21 +5,21 @@ class Solution:
 		# Code here
 		xor_result=0
 		for num in nums:
-		    xor_result ^=num
-		    
-	    rightmost_set_bit = 1
-	    while(xor_result & rightmost_set_bit) == 0:
-	        rightmost_set_bit <<= 1
+			xor_result ^=num
+		
+		rightmost_set_bit = 1
+		while(xor_result & rightmost_set_bit) == 0:
+			rightmost_set_bit <<= 1
 	    
-	    unique_num1, unique_num2 = 0,0
-	    for num in nums:
-	        if (num & rightmost_set_bit) == 0:
-	            unique_num1 ^= num
+		unique_num1, unique_num2 = 0,0
+		for num in nums:
+			if (num & rightmost_set_bit) == 0:
+				unique_num1 ^= num
 	            
-            else:
-                unique_num2 ^= num
+			else:
+				unique_num2 ^= num
                 
-        return[min(unique_num1, unique_num2), max(unique_num1, unique_num2)]
+			return[min(unique_num1, unique_num2), max(unique_num1, unique_num2)]
 
 
 
